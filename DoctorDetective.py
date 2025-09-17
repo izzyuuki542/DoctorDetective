@@ -16,7 +16,7 @@ teaching_points = {
                           "anticoagulation.",
     "Myocardial Infarction": "MI typically presents with crushing chest pain radiating to the arm/jaw, nausea, "
                              "and diaphoresis. ECG may show ST elevation. Acute management includes primary "
-                             "Percutaneous Coronary Intervention (pPCI). Medications include aspirin",
+                             "Percutaneous Coronary Intervention (pPCI). Medications include aspirin and nitroglycerin",
     "Pneumonia": "Classically presents with cough, fever, chest pain, and productive sputum. CXR shows consolidation. "
                  "Management includes antibiotics and supportive care.",
     "Asthma": "Patients may present with wheeze, cough, and SOB, often with history of atopy. Management is with "
