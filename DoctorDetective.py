@@ -53,13 +53,12 @@ all_questions = ["Any history of long flights?", "Fever?", "Wheeze?", "Pain radi
                  , "CXR findings?", "ECG findings?"]
 
 if st.session_state.extra_questions < 2 and not st.session_state.finished:
-    question = st.selectbox("What question would you like to ask? (-2 pts for each extra qn)",
+    question = st.selectbox("What question would you like to ask? (Maximum of 2 questions!)",
                             ["Select a question!"] + all_questions,
                             key=f"q_{st.session_state.game_id}")
     if question != "Select a question!" and question not in st.session_state.asked:
         st.session_state.asked.append(question)
         st.session_state.extra_questions += 1
-        st.session_state.penalty -= 2  # penalty
 
         answer = "No / Findings are normal"
         if st.session_state.case == "Pulmonary Embolism" and question == "Any history of long flights?":
@@ -116,7 +115,7 @@ if "guess" in st.session_state and st.session_state.guess:
         if st.button("✅ Confirm Diagnosis",
                      key=f"confirm_{st.session_state.game_id}") and not st.session_state.finished:
             if st.session_state.guess == st.session_state.case:
-                st.session_state.total_score += 10 + st.session_state.penalty
+                st.session_state.total_score += 1
                 st.session_state.result_msg = f"✅ Correct! It was {st.session_state.case}"
             else:
                 if st.session_state.total_score > st.session_state.highscore:
@@ -151,6 +150,7 @@ if "guess" in st.session_state and st.session_state.guess:
         if diagnosis in teaching_points:
             with st.expander("📚 Learn more"):
                 st.write(teaching_points[diagnosis])
+
 
 
 
