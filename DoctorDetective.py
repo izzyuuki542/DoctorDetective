@@ -87,7 +87,7 @@ if st.session_state.extra_questions < 2 and not st.session_state.finished:
         st.info(answer)
         st.session_state.investigations.append(f"{question}: {answer}")
 elif st.session_state.extra_questions >= 2:
-    st.warning("⚠️ You can only ask 2 additional questions.")
+    st.warning("⚠️ You can only ask 2 additional questions")
 if st.session_state.investigations:
     st.subheader("📝 Clerking Notes")
     for i, inv in enumerate(st.session_state.investigations, 1):
