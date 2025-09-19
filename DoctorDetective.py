@@ -72,7 +72,7 @@ if st.session_state.extra_questions < 2 and not st.session_state.finished:
         key=f"q_{st.session_state.game_id}"
     )
 
-    if question != "Select a question!":
+    if question != "Select a question!" and question not in st.session_state.asked:
         answer = diseases_qns[st.session_state.case][question]
         st.write(f"**Answer:** {answer}")
         st.session_state.asked.append(question)
