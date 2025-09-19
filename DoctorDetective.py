@@ -67,7 +67,7 @@ st.write(", ".join(st.session_state.symptoms))
 
 if st.session_state.extra_questions < 2 and not st.session_state.finished:
     question = st.selectbox("What question would you like to ask? (Maximum of 2 questions!)",
-                            ["Select a question!"] + diseases_qns["Arrhythmia".key()],
+                            ["Select a question!"] + diseases_qns["Arrhythmia"].key(),
                             key=f"q_{st.session_state.game_id}")
     if question != "Select a question!" and question not in st.session_state.asked:
         st.session_state.asked.append(question)
