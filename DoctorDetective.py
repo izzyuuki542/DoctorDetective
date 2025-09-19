@@ -11,17 +11,17 @@ diseases = {
 }
 
 diseases_qns = {
-    "Pulmonary Embolism": {"Any history of long flights?" : "Yes, recent long flight ✈️", "Fever?" : "No fever", "Wheeze?" : "No wheeze", "Pain radiating to arm/jaw?" : "No pain", "Cough with sputum?" : "No sputum detected"
+    "Pulmonary Embolism": {"Any history of long flights?" : "Yes, recent long flight ✈️", "Fever?" : "No fever", "Wheeze?" : "No wheeze", "Pain radiating to arm/jaw?" : "Pain does not radiate", "Cough with sputum?" : "No sputum detected"
                  , "CXR findings?" : "CXR is normal", "ECG findings?" : "ECG shows sinus tachycardia ⚡" },
     "Myocardial Infarction":{"Any history of long flights?" : "No recent long flight", "Fever?" : "No fever", "Wheeze?" : "No wheeze", "Pain radiating to arm/jaw?" : "Very painful, radiating to left arm 💪", "Cough with sputum?" : "No sputum detected"
                  , "CXR findings?" : "CXR is normal", "ECG findings?" : "ECG shows ST elevation 📈" },
-    "Pneumonia": {"Any history of long flights?" : "No recent long flight", "Fever?" : "Yes, high fever 🌡️", "Wheeze?" : "Yes, wheeze present💨", "Pain radiating to arm/jaw?" : "No pain", "Cough with sputum?" : "Yes, productive cough 🤒"
+    "Pneumonia": {"Any history of long flights?" : "No recent long flight", "Fever?" : "Yes, high fever 🌡️", "Wheeze?" : "Yes, wheeze present💨", "Pain radiating to arm/jaw?" : "Pain does not radiate", "Cough with sputum?" : "Yes, productive cough 🤒"
                  , "CXR findings?" : "CXR shows consolidation ☁️", "ECG findings?" : "ECG is normal" },
-    "Asthma": {"Any history of long flights?" : "No recent long flight", "Fever?" : "No fever", "Wheeze?" : "Yes, wheeze present💨", "Pain radiating to arm/jaw?" : "No pain", "Cough with sputum?" : "No sputum detected"
+    "Asthma": {"Any history of long flights?" : "No recent long flight", "Fever?" : "No fever", "Wheeze?" : "Yes, wheeze present💨", "Pain radiating to arm/jaw?" : "Pain does not radiate", "Cough with sputum?" : "No sputum detected"
                  , "CXR findings?" : "CXR is normal", "ECG findings?" : "ECG is normal" },
-    "Pneumothorax": {"Any history of long flights?" : "No recent long flight", "Fever?" : "No fever", "Wheeze?" : "No wheeze", "Pain radiating to arm/jaw?" : "No pain", "Cough with sputum?" : "No sputum detected"
+    "Pneumothorax": {"Any history of long flights?" : "No recent long flight", "Fever?" : "No fever", "Wheeze?" : "No wheeze", "Pain radiating to arm/jaw?" : "Pain does not radiate", "Cough with sputum?" : "No sputum detected"
                  , "CXR findings?" : "CXR shows tracheal deviation 🫁", "ECG findings?" : "ECG is normal" },
-    "Arrhythmia":{"Any history of long flights?" : "No recent long flight", "Fever?" : "No fever", "Wheeze?" : "No wheeze", "Pain radiating to arm/jaw?" : "No pain", "Cough with sputum?" : "No sputum detected"
+    "Arrhythmia":{"Any history of long flights?" : "No recent long flight", "Fever?" : "No fever", "Wheeze?" : "No wheeze", "Pain radiating to arm/jaw?" : "Pain does not radiate", "Cough with sputum?" : "No sputum detected"
                  , "CXR findings?" : "CXR is normal", "ECG findings?" : "ECG shows an irregularly irregular rhythm ❤️‍🔥" }
 }
 
