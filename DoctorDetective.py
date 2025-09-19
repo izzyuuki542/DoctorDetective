@@ -3,7 +3,7 @@ import random
 
 diseases = {
     "Pulmonary Embolism": ["shortness of breath", "chest pain", "recent flight", "tachycardia", "haemoptysis"],
-    "Myocardial Infarction": ["chest pain", "sweating", "nausea", "shortness of breath"],"
+    "Myocardial Infarction": ["chest pain", "sweating", "nausea", "shortness of breath"],
     "Pneumonia": ["cough", "fever", "chest pain", "shortness of breath"],
     "Asthma": ["shortness of breath", "cough", "history of atopy"],
     "Pneumothorax": ["chest pain", "shortness of breath", "cough", "tachycardia"],
