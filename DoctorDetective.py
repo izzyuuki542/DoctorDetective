@@ -28,7 +28,7 @@ diseases_qns = {
 teaching_points = {
     "Pulmonary Embolism": "A PE often presents with pleuritic chest pain, dyspnoea, tachycardia, and risk factors such "
                           "as recent long flights. For a Wells score of more than 4, CTPA (pulmonary angio) is required. Management includes "
-                          "anticoagulation (LMWH or DOAC)",
+                          "anticoagulation (LMWH or DOAC).",
     "Myocardial Infarction": "MI typically presents with crushing chest pain radiating to the arm/jaw, nausea, "
                              "and diaphoresis. ECG may show ST elevation. Acute management involves a "
                              "primary Percutaneous Coronary Intervention"
