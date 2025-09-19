@@ -3,11 +3,26 @@ import random
 
 diseases = {
     "Pulmonary Embolism": ["shortness of breath", "chest pain", "recent flight", "tachycardia", "haemoptysis"],
-    "Myocardial Infarction": ["chest pain", "sweating", "nausea", "shortness of breath"],
+    "Myocardial Infarction": ["chest pain", "sweating", "nausea", "shortness of breath"],"
     "Pneumonia": ["cough", "fever", "chest pain", "shortness of breath"],
     "Asthma": ["shortness of breath", "cough", "history of atopy"],
     "Pneumothorax": ["chest pain", "shortness of breath", "cough", "tachycardia"],
     "Arrhythmia": ["palpitations", "syncope", "dizziness", "chest discomfort", "shortness of breath"]
+}
+
+diseases_qns = {
+    "Pulmonary Embolism": {"Any history of long flights?" : "Yes, recent long flight ✈️", "Fever?" : "No fever", "Wheeze?" : "No wheeze", "Pain radiating to arm/jaw?" : "No pain", "Cough with sputum?" : "No sputum detected"
+                 , "CXR findings?" : "CXR is normal", "ECG findings?" : "ECG shows sinus tachycardia ⚡" },
+    "Myocardial Infarction":{"Any history of long flights?" : "No recent long flight", "Fever?" : "No fever", "Wheeze?" : "No wheeze", "Pain radiating to arm/jaw?" : "Very painful, radiating to left arm 💪", "Cough with sputum?" : "No sputum detected"
+                 , "CXR findings?" : "CXR is normal", "ECG findings?" : "ECG shows ST elevation 📈" },
+    "Pneumonia": {"Any history of long flights?" : "No recent long flight", "Fever?" : "Yes, high fever 🌡️", "Wheeze?" : "Yes, wheeze present💨", "Pain radiating to arm/jaw?" : "No pain", "Cough with sputum?" : "Yes, productive cough 🤒"
+                 , "CXR findings?" : "CXR shows consolidation ☁️", "ECG findings?" : "ECG is normal" },
+    "Asthma": {"Any history of long flights?" : "No recent long flight", "Fever?" : "No fever", "Wheeze?" : "Yes, wheeze present💨", "Pain radiating to arm/jaw?" : "No pain", "Cough with sputum?" : "No sputum detected"
+                 , "CXR findings?" : "CXR is normal", "ECG findings?" : "ECG is normal" },
+    "Pneumothorax": {"Any history of long flights?" : "No recent long flight", "Fever?" : "No fever", "Wheeze?" : "No wheeze", "Pain radiating to arm/jaw?" : "No pain", "Cough with sputum?" : "No sputum detected"
+                 , "CXR findings?" : "CXR shows tracheal deviation 🫁", "ECG findings?" : "ECG is normal" },
+    "Arrhythmia":{"Any history of long flights?" : "No recent long flight", "Fever?" : "No fever", "Wheeze?" : "No wheeze", "Pain radiating to arm/jaw?" : "No pain", "Cough with sputum?" : "No sputum detected"
+                 , "CXR findings?" : "CXR is normal", "ECG findings?" : "ECG shows an irregularly irregular rhythm ❤️‍🔥" }
 }
 
 teaching_points = {
@@ -15,8 +30,9 @@ teaching_points = {
                           "as recent long flights. Diagnosis may require CTPA (pulmonary angio). Management includes "
                           "anticoagulation.",
     "Myocardial Infarction": "MI typically presents with crushing chest pain radiating to the arm/jaw, nausea, "
-                             "and diaphoresis. ECG may show ST elevation. Acute management involves a primary Percutaneous Coronary Intervention"
-                                " (pPCI), along with morphine, oxygen, aspirin and nitroglycerin.",
+                             "and diaphoresis. ECG may show ST elevation. Acute management involves a "
+                             "primary Percutaneous Coronary Intervention"
+                             " (pPCI), along with morphine, oxygen, aspirin and nitroglycerin.",
     "Pneumonia": "Classically presents with cough, fever, chest pain, and productive sputum. CXR shows consolidation. "
                  "Management includes antibiotics and supportive care.",
     "Asthma": "Patients may present with wheeze, cough, and SOB, often with history of atopy. Management is with "
@@ -49,41 +65,14 @@ st.write(f"💯 Total Score: {st.session_state.total_score} | 🏆 Highscore: {s
 st.subheader("Presenting Complaint:")
 st.write(", ".join(st.session_state.symptoms))
 
-all_questions = ["Any history of long flights?", "Fever?", "Wheeze?", "Pain radiating to arm/jaw?", "Cough with sputum?"
-                 , "CXR findings?", "ECG findings?"]
-
 if st.session_state.extra_questions < 2 and not st.session_state.finished:
     question = st.selectbox("What question would you like to ask? (Maximum of 2 questions!)",
-                            ["Select a question!"] + all_questions,
+                            ["Select a question!"] + diseases_qns["Arrhythmia".key()],
                             key=f"q_{st.session_state.game_id}")
     if question != "Select a question!" and question not in st.session_state.asked:
         st.session_state.asked.append(question)
         st.session_state.extra_questions += 1
-
-        answer = "No / Findings are normal"
-        if st.session_state.case == "Pulmonary Embolism" and question == "Any history of long flights?":
-            answer = "Yes – recent long flight ✈️"
-        elif st.session_state.case == "Pneumonia" and question == "Fever?":
-            answer = "Yes – high fever 🌡️"
-        elif st.session_state.case == "Asthma" and question == "Wheeze?":
-            answer = "Yes – expiratory wheeze 💨"
-        elif st.session_state.case == "Myocardial Infarction" and question == "Pain radiating to arm/jaw?":
-            answer = "Yes – radiates to left arm 💪"
-        elif st.session_state.case == "Pneumonia" and question == "Cough with sputum?":
-            answer = "Yes – productive cough 🤒"
-        elif st.session_state.case == "Pulmonary Embolism" and question == "CXR findings?":
-            answer = random.choice(["Findings are normal", "CXR shows fluid buildup 💧"])
-        elif st.session_state.case == "Pneumonia" and question == "CXR findings?":
-            answer = "CXR shows consolidation ☁️"
-        elif st.session_state.case == "Pneumothorax" and question == "CXR findings?":
-            answer = "CXR shows tracheal deviation 🫁"
-        elif st.session_state.case == "Arrhythmia" and question == "ECG findings?":
-            answer = "ECG shows irregularly irregular rhythm ❤️‍🔥"
-        elif st.session_state.case == "Myocardial Infarction" and question == "ECG findings?":
-            answer = "ECG shows ST elevation 📈"
-        elif st.session_state.case == "Pulmonary Embolism" and question == "ECG findings?":
-            answer = "ECG shows sinus tachycardia ⚡"
-
+        answer = diseases_qns[diseases.values()]
         st.info(answer)
         st.session_state.investigations.append(f"{question}: {answer}")
 elif st.session_state.extra_questions >= 2:
