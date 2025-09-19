@@ -77,7 +77,6 @@ if st.session_state.extra_questions < 2 and not st.session_state.finished:
         st.write(f"**Answer:** {answer}")
         st.session_state.asked.append(question)
         st.session_state.extra_questions += 1
-        st.info(answer)
         st.session_state.investigations.append(f"{question}: {answer}")
 elif st.session_state.extra_questions >= 2:
     st.warning("⚠️ You can only ask 2 additional questions")
